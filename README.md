@@ -2,7 +2,7 @@
 
 A utility grid-intelligence reference architecture showing how MuleSoft APIs can translate operational signals into governed context for grid operators, field teams, customer-service channels, and AI agents.
 
-> **Project status:** Reference architecture and demonstration implementation. The repository includes API specifications, Mule application assets, configuration standards, tests, and documentation. Operational outcomes shown in scenarios are design targets, not independently validated production results.
+> **Project status:** Reference architecture and API specification (specs-and-documentation only). The repository includes OpenAPI contracts, configuration standards, and documentation. It does **not** yet include runnable Mule applications or an automated test suite. Operational outcomes shown in scenarios are design targets, not independently validated production results.
 
 ## Why this project exists
 
@@ -25,7 +25,7 @@ The design emphasizes:
 | System APIs | Governed source access | SCADA, weather, smart meters, DER, Salesforce assets |
 | Semantic layer | Operational meaning | Asset relationships, customer impact, priority, safety and policy context |
 
-The platform currently catalogs API contracts across these layers. See the repository folders for the authoritative specifications and implementation assets.
+The platform currently catalogs API contracts across these layers. See the `api-specs/` folder for the authoritative specifications.
 
 ## Demonstration scenario
 
@@ -43,13 +43,29 @@ This scenario is intended for architecture evaluation and demonstration. It does
 ## Repository contents
 
 ```text
-api-specs/       API contracts organized by architectural layer
-mule-apps/       Mule implementation assets
-config/          Naming, versioning and error-handling conventions
-tests/           Test assets
-docs/            Architecture, semantic-layer and portfolio documentation
+api-specs/       17 OpenAPI 3.0 contracts, organized by architectural layer:
+                   experience/ (3) · process/ (8) · system/ (6)
+config/          Naming, versioning and error-handling conventions (3 files)
+docs/            Semantic-layer, capability-map, implementation-status and
+                 portfolio documentation (+ architecture diagram)
 SECURITY.md      Security guidance
+CONTRIBUTING.md  Contribution guidance
+LICENSE          Project license
 ```
+
+## What's actually included
+
+This repository is **specs-and-documentation only** at this stage. The concrete artifacts present are:
+
+- **17 OpenAPI 3.0 API contracts** under `api-specs/`, grouped by API-led layer:
+  - `experience/` (3): `agent-alerts-api`, `agent-dashboard-api`, `dashboard-overview-api`
+  - `process/` (8): `incident-create-api`, `dispatch-crew-api`, `grid-coordination-api`, `critical-infra-alerts-api`, `a2a-coordination-api`, `a2a-priority-alerts-api`, `mcp-grid-exchange-api`, `mcp-safety-orchestration-api`
+  - `system/` (6): `scada-status-api`, `scada-devices-api`, `smart-meter-usage-api`, `der-devices-api`, `weather-forecast-api`, `salesforce-assets-api`
+- **3 governance/config standards** under `config/`: `naming-conventions.yaml`, `versioning-rules.yaml`, `error-handling-standards.yaml`
+- **Documentation** under `docs/`: `SEMANTIC_LAYER_EXPLAINED.md`, `capability-map.md`, `implementation-status.md`, `portfolio-guide.md`, and the `utilities-ai-semantic-layer.png` architecture diagram
+- **Project docs** at the root: `SECURITY.md`, `CONTRIBUTING.md`, `LICENSE`
+
+**Not included (planned / reference only):** this repository has no `mule-apps/` directory (runnable Mule applications) and no `tests/` directory. The Mule flows, DataWeave transformations, and automated tests referenced in the scenarios are design intent, not shipped assets.
 
 ## Documentation
 
@@ -83,7 +99,7 @@ Use this repository to:
 - review API contracts and canonical domain boundaries;
 - evaluate semantic context for agent-assisted utility operations;
 - demonstrate MuleSoft integration patterns;
-- test simulated storm, outage, meter and dispatch scenarios;
+- review the simulated storm, outage, meter and dispatch scenarios described in the specifications;
 - extend governance controls before connecting consequential systems.
 
 Before production use, validate requirements with utility operations, cybersecurity, safety, regulatory, data-governance, and platform teams. Apply organization-specific NERC CIP and other obligations; this repository does not constitute certification or compliance assurance.
@@ -92,7 +108,7 @@ Before production use, validate requirements with utility operations, cybersecur
 
 - MuleSoft and API-led connectivity
 - OpenAPI-based contracts
-- DataWeave and Mule application assets
+- DataWeave and Mule application patterns (design concepts)
 - OAuth 2.0, mTLS and policy-oriented security patterns
 - SCADA, weather, smart-meter, DER and Salesforce integration concepts
 
