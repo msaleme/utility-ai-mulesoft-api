@@ -39,7 +39,7 @@ The body of work demonstrates how governed enterprise integration can connect gr
 
 **Enterprise architect:** review the layered API boundaries, canonical models, security guidance, and cross-repository integration responsibilities.
 
-**Developer:** begin with the API specifications and simulated datasets, then inspect Mule flows and test assets.
+**Developer:** begin with the API specifications and available reference documentation. Where sibling repositories contain implementation or test assets, inspect those separately and apply their stated evidence status.
 
 ## Curation principles
 
