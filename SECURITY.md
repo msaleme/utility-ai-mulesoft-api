@@ -2,9 +2,9 @@
 
 ## 🔐 Security Standards
 
-This platform implements enterprise-grade security for critical infrastructure protection:
+This reference architecture illustrates security patterns for critical-infrastructure integration. It is a reference/demonstration design, not a certified or production-validated system. The frameworks listed below are standards the design is intended to help address — they are design targets, NOT certifications this project holds.
 
-### Compliance
+### Compliance frameworks addressed by design (not certifications held)
 - **NERC CIP**: North American Electric Reliability Corporation Critical Infrastructure Protection
 - **FERC Standards**: Federal Energy Regulatory Commission requirements
 - **ISO 27001**: Information security management
